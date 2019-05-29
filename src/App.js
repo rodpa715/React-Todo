@@ -1,8 +1,13 @@
 import React from 'react';
 import TodoComponent from './components/TodoComponents/Todo'
 
-const initialTodoList = [];
-
+const initialTodoList = [
+    {
+    id: Date.now(), 
+    task: "Clean out the closet", 
+    completed: false
+    },
+  ];
 
 class App extends React.Component {
   // you will need a place to store your state in this component.
@@ -16,6 +21,7 @@ class App extends React.Component {
       newTodoTask: "",
     }
   }
+
   changeHandler = (e) => {
     this.setState({
       newTodoTask: e.target.value,
@@ -24,11 +30,11 @@ class App extends React.Component {
 
   enterHandler =  (e) => {
     if(e.key === "Enter"){
-      this.addTodo()
+      this.addTask()
     }
   }
 
-  addTodo = () => {
+  addTask = () => {
     const newTodoItem = {
       id: Date.now(),
       task: this.state.newTodoTask,
@@ -46,12 +52,13 @@ class App extends React.Component {
   clearCompleted = () => {
     
   }
+
   render() {
     return (
       <TodoComponent 
         newToDo={this.state.newTodoTask}
         toDoList={this.state.todoList}
-        addTodo={this.addTodo}
+        addTask={this.addTask}
         clearCompleted={this.clearCompleted}
         changeHandler={this.changeHandler}
         enterHandler={this.enterHandler}
