@@ -50,7 +50,9 @@ class App extends React.Component {
   }
 
   clearCompleted = () => {
-    
+    this.setState({
+      todoList: this.state.todoList.filter(item => item.completed === false)
+    })
   }
 
   toggleCompleted = id => {
