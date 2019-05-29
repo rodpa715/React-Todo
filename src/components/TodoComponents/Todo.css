@@ -27,6 +27,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 .user-input *{
   border: 0.1rem solid white;
@@ -59,6 +60,16 @@
   border-radius: 0rem 0.2rem 0.2rem 0rem;
   border-left: none;
 }
+.user-input .remove{
+  width: 100%;
+  background-color: rgb(136, 48, 48);
+  color: rgb(238, 238, 137);
+}
+.user-input .remove:hover{
+  width: 100%;
+  background-color: rgb(255, 0, 0);
+  color: rgb(255, 238, 0);
+}
 .user-input .clear:hover{
   background-color: rgb(136, 48, 48);
 }
@@ -73,4 +84,8 @@
 }
 .todo-list li[data-state="true"]{
   text-decoration: line-through;
+}
+.todo-app p{
+  margin-top: 2rem;
+  padding: 0;
 }
