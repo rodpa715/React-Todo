@@ -52,7 +52,7 @@ class App extends React.Component {
       todoList: this.state.todoList.filter(item => item.completed === false)
     })
   }
-
+  /** Removes every item from todo list **/
   clearAll = () => {
     this.setState({
       todoList: []
