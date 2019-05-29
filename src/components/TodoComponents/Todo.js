@@ -15,6 +15,7 @@ export default function TodoComponent(props) {
         changeHandler={changeHandler}
         enterHandler={enterHandler}
       />
+      <h2>Things I still have to do :</h2>
       <TodoList toDoList={toDoList}/>
     </div>
   )
