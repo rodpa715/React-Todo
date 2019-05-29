@@ -21,19 +21,16 @@ class App extends React.Component {
       newTodoTask: "",
     }
   }
-
+  /** Updates input on keypress**/
   changeHandler = (e) => {
     this.setState({
       newTodoTask: e.target.value,
     });
   }
-
-  enterHandler =  (e) => {
-    if(e.key === "Enter"){
-      this.addTask()
-    }
-  }
-
+  /** invokes addTask() on Enter keypress**/
+  enterHandler =  (e) => e.key === "Enter" ? this.addTask() : null
+  
+  /** adds a new object to the array **/
   addTask = () => {
     const newTodoItem = {
       id: Date.now(),
@@ -48,13 +45,15 @@ class App extends React.Component {
       newTodoTask: "",
     })
   }
-
+  
+  /** Clears every object to witch it's completion state is true **/
   clearCompleted = () => {
     this.setState({
       todoList: this.state.todoList.filter(item => item.completed === false)
     })
   }
 
+  /** Toggles the completion state of the element being clicked to false and true **/
   toggleCompleted = id => {
 
     const updateState = list => {
@@ -76,6 +75,7 @@ class App extends React.Component {
    
   }
 
+  /* renders the component */
   render() {
     return (
       <TodoComponent 
