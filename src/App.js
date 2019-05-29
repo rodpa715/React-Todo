@@ -34,7 +34,7 @@ class App extends React.Component {
   addTask = () => {
     const newTodoItem = {
       id: Date.now(),
-      task: this.state.newTodoTask,
+      task: this.state.newTodoTask === "" ? "Nothing bro" : this.state.newTodoTask,
       completed: false,
     }
 
@@ -45,7 +45,7 @@ class App extends React.Component {
       newTodoTask: "",
     })
   }
-  
+
   /** Clears every object to witch it's completion state is true **/
   clearCompleted = () => {
     this.setState({
@@ -53,6 +53,11 @@ class App extends React.Component {
     })
   }
 
+  clearAll = () => {
+    this.setState({
+      todoList: []
+    })
+  }
   /** Toggles the completion state of the element being clicked to false and true **/
   toggleCompleted = id => {
 
@@ -86,6 +91,7 @@ class App extends React.Component {
         changeHandler={this.changeHandler}
         enterHandler={this.enterHandler}
         toggleCompleted={this.toggleCompleted}
+        clearAll={this.clearAll}
       />
     );
   }

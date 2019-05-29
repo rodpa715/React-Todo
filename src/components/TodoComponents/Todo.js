@@ -12,6 +12,7 @@ export default function TodoComponent(props) {
     changeHandler,
     enterHandler,
     toggleCompleted,
+    clearAll,
   } = props;
 
   return(
@@ -23,9 +24,11 @@ export default function TodoComponent(props) {
         clearCompleted={clearCompleted}
         changeHandler={changeHandler}
         enterHandler={enterHandler}
+        clearAll={clearAll}
       />
       <h2>Things I still have to do :</h2>
       <TodoList toDoList={toDoList} toggleCompleted={toggleCompleted}/>
+      <p>Created by Patrick Rodrigues</p>
     </div>
   )
 }
