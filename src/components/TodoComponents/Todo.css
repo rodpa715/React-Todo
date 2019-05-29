@@ -70,3 +70,6 @@
 .todo-list li{
   font-size: 1.4rem;
 }
+.todo-list li[data-state="true"]{
+  text-decoration: line-through;
+}

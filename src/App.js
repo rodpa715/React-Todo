@@ -53,6 +53,27 @@ class App extends React.Component {
     
   }
 
+  toggleCompleted = id => {
+
+    const updateState = list => {
+      this.setState({
+        todoList: list,
+      })
+    }
+
+    let newTodoList = this.state.todoList.slice()
+
+    newTodoList = newTodoList.map( item => {
+      if(item.id === id){
+        item.completed = !item.completed;
+        return updateState(newTodoList)
+      }else{
+        return updateState(newTodoList)
+      }
+    })
+   
+  }
+
   render() {
     return (
       <TodoComponent 
@@ -62,6 +83,7 @@ class App extends React.Component {
         clearCompleted={this.clearCompleted}
         changeHandler={this.changeHandler}
         enterHandler={this.enterHandler}
+        toggleCompleted={this.toggleCompleted}
       />
     );
   }
