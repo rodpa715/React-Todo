@@ -13,7 +13,7 @@ export default function TodoForm(props) {
       />
       <button className="user-input add" onClick={addTask} >Add Task</button>
       <button className="user-input clear" onClick={clearCompleted} >Clear Completed Tasks</button>
-      <button className="user-input remove" onClick={clearAll} >Clear All</button>
+      <button className="user-input clearAll" onClick={clearAll} >Clear All</button>
     </div>
   )
 }

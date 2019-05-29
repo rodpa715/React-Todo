@@ -60,12 +60,12 @@
   border-radius: 0rem 0.2rem 0.2rem 0rem;
   border-left: none;
 }
-.user-input .remove{
+.user-input .clearAll{
   width: 100%;
   background-color: rgb(136, 48, 48);
   color: rgb(238, 238, 137);
 }
-.user-input .remove:hover{
+.user-input .clearAll:hover{
   width: 100%;
   background-color: rgb(255, 0, 0);
   color: rgb(255, 238, 0);
