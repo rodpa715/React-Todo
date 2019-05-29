@@ -10,7 +10,7 @@
   justify-content: center;
 }
 .todo-app{
-  background-color: rgb(49, 52, 58);
+  background-color: #31343a;
   color: white;
   display: flex;
   flex-direction: column;
@@ -21,6 +21,7 @@
   width: 100%;
   padding: 2rem;
   border-radius: 0.5rem;
+  box-shadow: 0rem 0rem 1.3rem -0.4rem rgba(41, 38, 38, 0.75);
 }
 .user-input{
   display: flex;
