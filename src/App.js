@@ -13,12 +13,12 @@ class App extends React.Component {
     super(props)
     this.state = {
       todoList: initialTodoList,
-      newTodo: "",
+      newTodoTask: "",
     }
   }
   changeHandler = (e) => {
     this.setState({
-      newTodo: e.target.value,
+      newTodoTask: e.target.value,
     });
   }
 
@@ -31,7 +31,7 @@ class App extends React.Component {
   addTodo = () => {
     const newTodoItem = {
       id: Date.now(),
-      task: this.state.newTodo,
+      task: this.state.newTodoTask,
       completed: false,
     }
 
@@ -39,7 +39,7 @@ class App extends React.Component {
 
     this.setState({
       todoList: newTodoList,
-      newTodo: "",
+      newTodoTask: "",
     })
   }
 
@@ -49,7 +49,7 @@ class App extends React.Component {
   render() {
     return (
       <TodoComponent 
-        newToDo={this.state.newTodo}
+        newToDo={this.state.newTodoTask}
         toDoList={this.state.todoList}
         addTodo={this.addTodo}
         clearCompleted={this.clearCompleted}
