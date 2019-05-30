@@ -1,26 +1,34 @@
 import React from 'react';
 import TodoComponent from './components/TodoComponents/Todo'
+import localStorageHelper from "./localStorageHelper"
 
 const initialTodoList = [
     {
-    id: Date.now(), 
-    task: "Clean out the closet", 
+    id: Date.now(),
+    task: "Click on me and click Clear Completed Tasks", 
+    completed: false
+    },
+    {
+    id: Date.now(),
+    task: "Clear All will delete all tasks, even completed ones", 
     completed: false
     },
   ];
-
+  
 class App extends React.Component {
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
   // this component is going to take care of state, and any change handlers you need to work with your state
-
+  
+  
   constructor(props){
     super(props)
     this.state = {
-      todoList: initialTodoList,
+      todoList: localStorageHelper.getInitialObject("state", initialTodoList),
       newTodoTask: "",
     }
   }
+
   /** Updates input on keypress**/
   changeHandler = (e) => {
     this.setState({
@@ -37,13 +45,14 @@ class App extends React.Component {
       task: this.state.newTodoTask === "" ? "Nothing bro" : this.state.newTodoTask,
       completed: false,
     }
-
+    
     const newTodoList = this.state.todoList.concat(newTodoItem)
-
+    
     this.setState({
       todoList: newTodoList,
       newTodoTask: "",
     })
+    localStorageHelper.updateLocalStorage("state", this.state.todoList)
   }
 
   /** Clears every object to witch it's completion state is true **/
@@ -51,12 +60,14 @@ class App extends React.Component {
     this.setState({
       todoList: this.state.todoList.filter(item => item.completed === false)
     })
+    localStorageHelper.updateLocalStorage("state", this.state.todoList)
   }
   /** Removes every item from todo list **/
   clearAll = () => {
     this.setState({
       todoList: []
     })
+    localStorageHelper.clearLocalStorage("state")
   }
   /** Toggles the completion state of the element being clicked to false and true **/
   toggleCompleted = id => {
@@ -77,7 +88,8 @@ class App extends React.Component {
         return updateState(newTodoList)
       }
     })
-   
+
+    localStorageHelper.updateLocalStorage("state", this.state.todoList)   
   }
 
   /* renders the component */
