@@ -11,8 +11,9 @@ const localStorageHelper = {
   updateLocalStorage: function (savedKey, state) {
     localStorage.setItem(savedKey, JSON.stringify(state));
   },
+
   clearLocalStorage: function(savedKey){
-    localStorage.clear(savedKey)
+    localStorage.removeItem(savedKey)
   },
 }
 export default localStorageHelper
