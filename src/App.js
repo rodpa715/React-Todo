@@ -5,12 +5,12 @@ import uuid from 'uuid';
 
 const initialTodoList = [
     {
-    id: uuid().v4,
+    id: uuid(),
     task: "Click on me and click Clear Completed Tasks", 
     completed: false
     },
     {
-    id: uuid().v4,
+    id: uuid(),
     task: "Clear All will delete all tasks, even completed ones", 
     completed: false
     },
