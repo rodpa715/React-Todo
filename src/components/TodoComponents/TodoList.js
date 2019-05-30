@@ -8,7 +8,6 @@ export default function TodoList(props) {
         toDoList.map(todo => {
         return (
         <li 
-          data-id={todo.id} 
           data-state={todo.completed}
           onClick={() => toggleCompleted(todo.id)}
           key={todo.id}
