@@ -28,7 +28,7 @@ export default function TodoComponent(props) {
       />
       <h2>Things I still have to do :</h2>
       <TodoList toDoList={toDoList} toggleCompleted={toggleCompleted}/>
-      <p>Created by Patrick Rodrigues</p>
+      <a className="author" href="https://github.com/rodpa715/React-Todo" target="_blank" rel="noopener noreferrer">Created by Patrick Rodrigues</a>
     </div>
   )
 }
