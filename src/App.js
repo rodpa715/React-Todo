@@ -21,7 +21,6 @@ class App extends React.Component {
   // design `App` to be the parent component of your application.
   // this component is going to take care of state, and any change handlers you need to work with your state
   
-  
   constructor(props){
     super(props)
     this.state = {
@@ -36,13 +35,14 @@ class App extends React.Component {
       newTodoTask: e.target.value,
     });
   }
+
   /** invokes addTask() on Enter keypress**/
   enterHandler =  (e) => e.key === "Enter" ? this.addTask() : null
   
   /** adds a new object to the array **/
   addTask = () => {
     const newTodoItem = {
-      id: Date.now(),
+      id: uuid(),
       task: this.state.newTodoTask === "" ? "Nothing bro" : this.state.newTodoTask,
       completed: false,
     }
@@ -58,11 +58,12 @@ class App extends React.Component {
 
   /** Clears every object to witch it's completion state is true **/
   clearCompleted = () => {
-    this.setState({
-      todoList: this.state.todoList.filter(item => item.completed === false)
-    })
+    this.setState(state => ({
+      todoList: state.todoList.filter(item => item.completed === false)
+    }));
     localStorageHelper.updateLocalStorage("state", this.state.todoList)
   }
+
   /** Removes every item from todo list **/
   clearAll = () => {
     this.setState({
@@ -70,6 +71,7 @@ class App extends React.Component {
     })
     localStorageHelper.clearLocalStorage("state")
   }
+  
   /** Toggles the completion state of the element being clicked to false and true **/
   toggleCompleted = id => {
 
@@ -89,8 +91,7 @@ class App extends React.Component {
         return updateState(newTodoList)
       }
     })
-
-    localStorageHelper.updateLocalStorage("state", this.state.todoList)   
+    localStorageHelper.updateLocalStorage("state", this.state.todoList)
   }
 
   /* renders the component */
