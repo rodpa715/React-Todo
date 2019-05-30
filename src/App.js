@@ -1,15 +1,16 @@
 import React from 'react';
 import TodoComponent from './components/TodoComponents/Todo'
 import localStorageHelper from "./localStorageHelper"
+import uuid from 'uuid';
 
 const initialTodoList = [
     {
-    id: Date.now(),
+    id: uuid().v4,
     task: "Click on me and click Clear Completed Tasks", 
     completed: false
     },
     {
-    id: Date.now(),
+    id: uuid().v4,
     task: "Clear All will delete all tasks, even completed ones", 
     completed: false
     },
