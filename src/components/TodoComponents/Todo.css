@@ -1,0 +1,109 @@
+:root{
+  font-size: 62.5%;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+*{
+  box-sizing: border-box;
+  font-size: 1.6rem;
+}
+#root{
+  display: flex;
+  justify-content: center;
+}
+.todo-app{
+  background-color: rgb(32, 32, 61);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0rem 0rem 1.3rem -0.4rem rgba(41, 38, 38, 0.75);
+}
+.todo-app h1{
+  font-size: 2.6rem;
+}
+.user-input{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.user-input *{
+  border: 0.1rem solid white;
+  border-radius: 0.2rem;
+  padding: 0.5rem 0;
+  margin: 0.5rem 0;
+}
+.user-input input{
+  width: 100%;
+  padding: 0.5rem;
+}
+.user-input button{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: rgb(32, 32, 61);
+  color: white;
+  transition: 0.5s;
+}
+.user-input button:hover{
+  transition: 0.5s;
+}
+
+.user-input .add{
+  border-radius: 0.2rem 0rem 0rem 0.2rem;
+  border-right: none;
+}
+.user-input .add:hover{
+  background-color: rgb(50, 129, 50);
+}
+.user-input .clear{
+  border-radius: 0rem 0.2rem 0.2rem 0rem;
+  border-left: none;
+}
+.user-input .clear:hover{
+  background-color: rgb(136, 48, 48);
+
+}
+.user-input .clearAll{
+  width: 100%;
+  background-color: rgb(172, 63, 63);
+  color: rgb(238, 238, 137);
+}
+.user-input .clearAll:hover{
+  width: 100%;
+  background-color: rgb(255, 123, 0);
+  color: rgb(255, 238, 0);
+}
+.todo-list{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.todo-list li{
+  font-size: 1.4rem;
+  user-select: none;
+  cursor: pointer;
+}
+.todo-list li[data-state="true"]{
+  text-decoration: line-through;
+}
+.todo-app .author{
+  margin-top: 2rem;
+  padding: 0;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+.todo-app .author:hover{
+  color: orange;
+  transition: 0.5s;
+}
